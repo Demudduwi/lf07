@@ -67,7 +67,7 @@ if (isset($offset)) {
 
         <div class="row mainmenue button" id="btn_setup">
           <div class="col-md-3 menueimg">
-            <img src="./icons/setup.jpg" alt="setup" width="75" height="75">
+            <img src="./icons/setup.png" alt="setup" width="75" height="75">
           </div>
           <div class="col-md-9 menuecontent">
             Einstellungen
@@ -95,7 +95,7 @@ if (isset($offset)) {
                 <div class="container content-entry">
                   <div class="row">
                     <div class="col-3">
-                      <img src="./icons/thermometer.jpg" alt="temperature" width="50" height="50">
+                      <img src="./icons/thermometer.png" alt="temperature" width="50" height="50">
                     </div>
                     <div class="col-9">aktuelle Temeperatur</div>
                   </div>
@@ -109,7 +109,7 @@ if (isset($offset)) {
                 <div class="container content-entry">
                   <div class="row">
                     <div class="col-3">
-                      <img src="./icons/thermtarget.jpg" alt="targettemperature" width="50" height="50">
+                      <img src="./icons/thermtarget.png" alt="targettemperature" width="50" height="50">
                     </div>
                     <div class="col-9">Zieltemperatur</div>
                   </div>
@@ -140,7 +140,7 @@ if (isset($offset)) {
                 <div class="container content-entry">
                   <div class="row">
                     <div class="col-3">
-                      <img src="./icons/thermtarget.jpg" alt="targettemperature" width="50" height="50">
+                      <img src="./icons/thermtarget.png" alt="targettemperature" width="50" height="50">
                     </div>
                     <div class="col-9">Overwrite</div>
                   </div>
@@ -157,7 +157,7 @@ if (isset($offset)) {
                 <div class="container content-entry">
                   <div class="row">
                     <div class="col-3">
-                      <img src="./icons/thermtarget.jpg" alt="targettemperature" width="50" height="50">
+                      <img src="./icons/thermtarget.png" alt="targettemperature" width="50" height="50">
                     </div>
                     <div class="col-9">Overwrite</div>
                   </div>
