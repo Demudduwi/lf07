@@ -1,7 +1,11 @@
 <?php
 // Datenbanksimulation
-$temperature = 42;
-$target = 27;
+$servername = "localhost";
+$username = "test"; 
+$password = "itech2022";
+$dbname = "dht"; 
+#$temperature = 42;
+$target = 22;
 $offset = -1;
 // $overwrite = NULL;
 $addClass = "";
@@ -9,7 +13,25 @@ $userName = "Testuser";
 $hardwareID = 47110815;
 $time = date('H:i:s', time());
 
-// Form abarbeiten (falls vorhanden)
+// Create connection
+$conn = new mysqli($servername, $username, $password,$dbname);
+
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+echo "Connected successfully";
+
+$sql = "SELECT temp FROM temp_in where device_id = 1 ORDER BY time DESC";
+
+if ( $result= $conn->query($sql)) {
+  $obj = $result->fetch_object();
+  $temperature=$obj->temp;
+  $temperature = number_format($temperature,1) ; }
+
+
+
+//Form abarbeiten (falls vorhanden)
 if ($_POST) {
   if (isset($_POST['offset'])) {
     $offset = $_POST['offset'];
@@ -20,12 +42,22 @@ if ($_POST) {
   }
   if (isset($_POST['overwrite'])) {
     $overwrite = $_POST['overwrite'];
+
+  }
+  else {
+    // Todo: Wert Null in DB eintragen
   }
 
   // Datenbank schreiben
 }
 
 // Datenbank lesen
+
+
+
+
+
+
 
 if (isset($overwrite) && $overwrite!=0 && $overwrite!=NULL) {$addClass = "lineThrough";}
 if (isset($offset)) {
@@ -34,6 +66,7 @@ if (isset($offset)) {
   $targetPrint2 = $target+$offset;
   $targetPrint = $target.$a.$offset."°C = ".$targetPrint2."°C";
 }
+
 ?>
 
 <!DOCTYPE html>
